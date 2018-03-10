@@ -1,0 +1,27 @@
+<div class="row">
+
+	<!-- Blog Entries Column -->
+	<div class="col-md-8">
+
+	  <h1 class="my-4">All Articles
+	    <small><%= @articles.length %></small>
+	  </h1>
+
+	  <!-- Blog Post -->
+	  <% @articles.each do |article| %>
+	  <div class="card mb-4">
+	  <%= image_tag(article.feature_image_url, size: "750x300", class: "card-img-top") %>
+	    <div class="card-body">
+	      <h2 class="card-title"><%= article.title %></h2>
+	      <p class="card-text"><%= article.body.truncate(200) %></p>
+	      <%= link_to "Read More", article, class: "btn btn-primary" %>
+	    </div>
+	    <div class="card-footer text-muted">
+	      Posted on <%= article.publish_date.strftime("%B %d %Y") %>
+	      <%= link_to article.category.name, article.category %>
+	    </div>
+	  </div>
+	  <% end %>
+
+	  <%= render '/categories/list' %>
+</div>

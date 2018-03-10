@@ -1,0 +1,32 @@
+<%= form_for @article do |f| %>
+
+<% if @article.errors.any? %>
+	<h3>Your article could not be saved because:</h3>
+	<ol>
+		<% @article.errors.full_messages.each do |msg| %>
+			<li>
+				<%= msg %><br/>
+			</li>
+		<% end %>
+	</ol>
+<% end %>
+
+<label for="article_category_id">Category: </label><br/>
+	<%= f.collection_select :category_id, Category.all, :id, :name, prompt: "Select Category" %> <br/>
+
+<label for="article_title">Title:</label><br/>
+<%= f.text_field :title, placeholder: "Enter article title" %><br/>
+
+<label for="article_body">Body:</label><br/>
+<%= f.text_area :body, placeholder: "Enter your article in this space." %><br/>
+
+<label for="publish_date">Published On:</label><br/>
+<%= f.text_field :publish_date %><br/>
+
+<%= f.label :feature_image_url %>
+<%= f.file_field :feature_image_url %>
+
+
+<%= f.submit %><br/>
+
+<% end %>

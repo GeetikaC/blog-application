@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Blog</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  
+    <script src="/javascripts/jquery.js"></script>
+    <script src="/javascripts/bootstrap.js"></script>
+
+    <link rel="stylesheet" href="/stylesheets/bootstrap.css" />
+    <link rel="stylesheet" href="/stylesheets/blog-home.css" />
+
+  </head>
+
+  <body>
+  <div class="mb-3"></div>
+    <%= render '/layouts/nav' %>
+    <div class="container">
+    <%= notice %>
+    <%= alert %>
+    <%= yield %>
+    </div>
+    <!-- Footer -->
+    <div class="mb-5"></div>
+    <footer class="py-1 bg-dark fixed-bottom">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; My Blog Application 2018</p>
+      </div>
+      <!-- /.container -->
+    </footer>
+  </body>
+</html>

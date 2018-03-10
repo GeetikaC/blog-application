@@ -1,0 +1,65 @@
+<!-- Page Content -->
+<div class="container">
+
+  <div class="row">
+
+    <!-- Post Content Column -->
+    <div class="col-lg-8">
+
+      <!-- Title -->
+      <h1 class="mt-4"><%= @article.title %></h1>
+
+      <!-- Author -->
+      <p class="lead">
+        in
+        <%= link_to @article.category.name, @article.category %>
+      </p>
+
+      <hr>
+
+      <!-- Date/Time -->
+      <p>Posted on <%= @article.publish_date.strftime("%B %d %Y %H:%M %p") %></p>
+
+      <hr>
+
+      <!-- Preview Image -->
+      <%= image_tag(@article.feature_image_url, size: "900x300", class: "img-fluid rounded") %>
+
+      <hr>
+
+      <!-- Post Content -->
+      <p><%= raw(@article.body) %></p>
+
+      <hr>
+
+      <!-- Comments Form -->
+      <div class="card my-4">
+        <h5 class="card-header">Leave a Comment:</h5>
+        <div class="card-body">
+          <form>
+            <div class="form-group">
+              <textarea class="form-control" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Single Comment -->
+      <div class="media mb-4">
+        <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+        <div class="media-body">
+          <h5 class="mt-0"></h5>
+          Very Nice article. Quite informative.
+        </div>
+      </div>
+
+    <%= render '/categories/list' %>
+   </div>
+  </div>
+</div>
+<!-- /.container -->
+
+
+
+

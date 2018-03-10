@@ -1,0 +1,23 @@
+<%= form_for @category do |f| %>
+	
+	<% if @category.errors.any? %>
+	<h3>Your category could not be added because:</h3>
+		<ul>
+			<% @category.errors.full_messages.each do |msg| %>
+				<li>
+					<%= msg %><br/>
+				</li>
+			<% end %>
+		</ul>
+	<% end %>
+
+	<label for="category_name">Name:</label><br/>
+	<%= f.text_field :name, placeholder: "Enter category name" %><br/>
+
+	<label for="category_description">Description:</label><br/>
+	<%= f.text_area :description, min: 10, placeholder: "Enter description of minimum 10 words" %><br/>
+
+	<%= f.submit %><br/>
+
+<% end %>
+		
