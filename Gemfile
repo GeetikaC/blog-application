@@ -10,6 +10,7 @@ end
 gem 'carrierwave', '>= 1.0.0.rc', '< 2.0'
 gem 'devise'
 gem 'rails', '~> 5.1.4'
+gem 'ckeditor'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use Puma as the app server
